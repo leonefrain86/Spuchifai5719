@@ -1,10 +1,12 @@
+delimiter $$
 create procedure altaBanda (unidBanda SMALLINT,
                             unnombre VARCHAR(45),
                             unanioFundacion SMALLINT)
 BEGIN
     INSERT INTO Banda (idBanda, nombre, anioFundacion)
-                VALUES (unidBanda, unnombre, unaniofundacion)
-END
+                VALUES (unidBanda, unnombre, unaniofundacion);
+END 
+ $$
 
 create procedure altaAlbum (unidAlbum TINYINT,
                             unidBanda SMALLINT,
@@ -12,9 +14,9 @@ create procedure altaAlbum (unidAlbum TINYINT,
                             unfechaLanzamiento DATE)
 BEGIN
     INSERT INTO Album (idAlbum, idBanda, nombre, fechaLanzamiento)
-                VALUES (unidAlbum, unidBanda, unnombre, unfechaLanzamiento)
+                VALUES (unidAlbum, unidBanda, unnombre, unfechaLanzamiento);
 END
-
+$$
 
 create procedure altaCancion (unidcancion INT,
                             unidAlbum TINYINT,
@@ -22,9 +24,9 @@ create procedure altaCancion (unidcancion INT,
                             unnombre VARCHAR(45))
 BEGIN
     INSERT INTO Cancion (idCancion, idAlbum, numeroOrden, nombre)
-                VALUES (unidCancion, unidAlbum, unnumeroOrden, unnombre)
+                VALUES (unidCancion, unidAlbum, unnumeroOrden, unnombre);
 END
-
+$$
 
 create procedure altaReproduccion (unidReproduccion INT,
                             unidCliente INT,
@@ -32,9 +34,9 @@ create procedure altaReproduccion (unidReproduccion INT,
                             unfechaHora DATETIME)
 BEGIN
     INSERT INTO Reproduccion (idreproduccion, idCliente, idCancion, fechaHora)
-                VALUES (unidReproduccion, unidCliente, unidCancion, unfechaHora)
+                VALUES (unidReproduccion, unidCliente, unidCancion, unfechaHora);
 END
-
+$$
 
 create procedure altaCliente (unidCliente INT,                            
                             unnombre VARCHAR(45),
@@ -43,5 +45,6 @@ create procedure altaCliente (unidCliente INT,
                             uncontrasenia VARCHAR(45))
 BEGIN
     INSERT INTO Cliente (idCliente, nombre, apellido, mail, contrasenia)
-                VALUES (unidCliente, unnombre, unapellido, unmail, SHA(uncontrasenia))
+                VALUES (unidCliente, unnombre, unapellido, unmail, SHA(uncontrasenia));
 END
+$$

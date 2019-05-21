@@ -1,10 +1,10 @@
-DELIMITER//
+DELIMITER //
 CREATE FUNCTION cantidadDeReproducciones( unIdCancion INTEGER )
 RETURNS INT
 BEGIN 
         DECLARE TOTAL INT;
         SELECT COUNT(idReproccion)
-        INTO TOTAL;
+        INTO TOTAL
         FROM Reproduccion
         where idCancion = unIdCancion;
 
@@ -15,7 +15,7 @@ DELIMITER //
 CREATE FUNCTION cantidadDeReproduccionesPorBanda ( unIdBanda SMALLINT)
 RETURNS INT
 BEGIN 
-        DECLARE TOTAL;
+        DECLARE TOTAL INT ;
         SELECT SUM(cantidadDeReproducciones)
         INTO TOTAL
         FROM Album A 
