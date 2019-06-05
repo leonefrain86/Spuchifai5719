@@ -3,7 +3,7 @@ CREATE FUNCTION cantidadDeReproducciones( unIdCancion INTEGER )
 RETURNS INT
 BEGIN 
         DECLARE TOTAL INT;
-        SELECT COUNT(idReproccion)
+        SELECT COUNT(idReproduccion)
         INTO TOTAL
         FROM Reproduccion
         where idCancion = unIdCancion;
@@ -16,7 +16,7 @@ CREATE FUNCTION cantidadDeReproduccionesPorBanda ( unIdBanda SMALLINT)
 RETURNS INT
 BEGIN 
         DECLARE TOTAL INT ;
-        SELECT SUM(cantidadDeReproducciones)
+        SELECT SUM(cantidadDeReproducciones(idCancion))
         INTO TOTAL
         FROM Album A 
         INNER JOIN Cancion C
