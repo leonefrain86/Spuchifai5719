@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spuchifai5719", "Spuchifai5719\Spuchifai5719.csproj", "{22C58EA5-CB02-4AF3-842C-C2DA1AC311D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaSpuchifai", "PruebaSpuchifai\PruebaSpuchifai.csproj", "{6EC56E1E-C83F-4709-B569-95135FF4871F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{22C58EA5-CB02-4AF3-842C-C2DA1AC311D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22C58EA5-CB02-4AF3-842C-C2DA1AC311D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22C58EA5-CB02-4AF3-842C-C2DA1AC311D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EC56E1E-C83F-4709-B569-95135FF4871F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EC56E1E-C83F-4709-B569-95135FF4871F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EC56E1E-C83F-4709-B569-95135FF4871F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EC56E1E-C83F-4709-B569-95135FF4871F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
