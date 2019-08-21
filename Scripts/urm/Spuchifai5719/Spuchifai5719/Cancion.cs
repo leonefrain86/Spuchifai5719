@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Spuchifai5719
@@ -19,12 +20,24 @@ namespace Spuchifai5719
         [Column("nroOrden"), Required]
         public byte NroOrden { get; set; }
 
+        public List<Reproduccion> Reproducciones { get; set; }
+
         public Cancion() { }
 
         public Cancion(string nombre, byte nroOrden)
         {
             Nombre = nombre;
             NroOrden = nroOrden;
+        }
+
+        public void AgregarReproduccion(Reproduccion reproduccion)
+        {
+            Reproducciones.Add(reproduccion);
+        }
+
+        public int CantidadReproducciones()
+        {
+            return Reproducciones.Count;
         }
     }
 }

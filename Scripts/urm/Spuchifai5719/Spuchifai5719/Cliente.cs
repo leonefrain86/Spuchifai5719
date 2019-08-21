@@ -23,17 +23,20 @@ namespace Spuchifai5719
         [Column("contraseña"), StringLength(45), Required]
         public string Contraseña { get; set; }
 
-        public List<Reproduccion> Reproduccion { get; set; }
+        public List<Reproduccion> Reproducciones { get; set; }
 
-        public Cliente() { }
-
-        public Cliente(string nombre, string apellido, string mail, string contraseña)
+        public Cliente()
         {
-            Nombre = nombre;
-            Apellido = apellido;
-            Mail = mail;
-            Contraseña = contraseña;
+            Reproducciones = new List<Reproduccion>();
         }
+
+        public void ReproducirCancion(Cancion cancion)
+        {
+            Reproduccion unaReproduccion = new Reproduccion(this, cancion);
+            Reproducciones.Add(unaReproduccion);
+            cancion.AgregarReproduccion(unaReproduccion);
+        }
+
 
     }
 }

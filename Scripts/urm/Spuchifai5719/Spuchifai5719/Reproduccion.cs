@@ -22,7 +22,15 @@ namespace Spuchifai5719
 
         public Reproduccion()
         {
+           
+        }
+
+        public Reproduccion(Cliente cliente, Cancion cancion)
+        {
+            this.cliente = cliente;
+            this.cancion = cancion;
             FechaHora = DateTime.Now;
         }
+       
     }
 }

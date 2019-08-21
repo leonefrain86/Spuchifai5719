@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace Spuchifai5719
 {
@@ -17,8 +19,13 @@ namespace Spuchifai5719
         [Column("anioFundacion"), Required]
         public DateTime AnioFundacion { get; set; }
 
+        public List<Album> Albumes { get; set; }
+
         public Banda() { }
 
-        
+        public int CantidadDeReproduccionesPorBanda()
+        {
+            return Albumes.Sum(a => a.CantidadDeReproduccionesPorAlbum());
+        }
     }
 }

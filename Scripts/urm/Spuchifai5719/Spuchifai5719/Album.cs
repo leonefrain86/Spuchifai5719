@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace Spuchifai5719
 {
@@ -20,12 +22,19 @@ namespace Spuchifai5719
         [Column("fechaLanzamiento"), Required]
         public DateTime FechaLanzamiento { get; set; }
 
+        public List<Cancion> Canciones { get; set; }
+
         public Album() { }
 
         public Album(string nombre)
         {
             Nombre = nombre;
             FechaLanzamiento = DateTime.Now;
+        }
+
+        public int CantidadDeReproduccionesPorAlbum()
+        {
+            return Canciones.Sum(c => c.CantidadReproducciones());
         }
     }
 }
