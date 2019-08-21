@@ -9,7 +9,7 @@ SET FOREIGN_KEY_CHECKS=0;
 
 CREATE TABLE Album
 (
-	idAlbum TINYINT NOT NULL,
+	idAlbum INT NOT NULL,
 	idBanda SMALLINT NOT NULL,
 	nombre VARCHAR(45) NOT NULL,
 	fechaLanzamiento DATE NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE Banda
 CREATE TABLE Cancion
 (
 	idCancion INTEGER NOT NULL,
-	idAlbum TINYINT NOT NULL,
+	idAlbum INT NOT NULL,
 	numeroOrden TINYINT NOT NULL,
 	nombre VARCHAR(45) NOT NULL,
 	PRIMARY KEY (idCancion),

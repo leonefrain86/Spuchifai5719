@@ -8,7 +8,7 @@ BEGIN
 END 
  $$
 
-create procedure altaAlbum (unidAlbum TINYINT,
+create procedure altaAlbum (unidAlbum INT,
                             unidBanda SMALLINT,
                             unnombre VARCHAR(45),
                             unfechaLanzamiento DATE)
@@ -19,7 +19,7 @@ END
 $$
 
 create procedure altaCancion (unidcancion INT,
-                            unidAlbum TINYINT,
+                            unidAlbum INT,
                             unnumeroOrden TINYINT,
                             unnombre VARCHAR(45))
 BEGIN
