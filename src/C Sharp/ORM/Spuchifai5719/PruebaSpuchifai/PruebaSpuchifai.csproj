@@ -12,4 +12,8 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.3.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Spuchifai5719\Spuchifai5719.csproj" />
+  </ItemGroup>
+
 </Project>
