@@ -8,7 +8,7 @@ namespace Spuchifai5719.ADO
     {
         void altaBanda(Banda banda);
 
-        void altaAlbum(Album album);
+        void altaAlbum(Album album);   
 
         void altaCancion(Cancion cancion);
 
