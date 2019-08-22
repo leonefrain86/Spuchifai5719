@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Spuchifai5719.ADO
 {
-    class MYSQLADO : DbContext, IADO
+    public class MYSQLADO : DbContext, IADO
     {
         DbSet<Album> Albumes { get; set; }
         DbSet<Banda> Bandas { get; set; }
@@ -15,7 +15,7 @@ namespace Spuchifai5719.ADO
 
         protected override void OnConfiguring(DbContextOptionsBuilder ob)
         {
-            ob.UseMySQL("server=localhost;database=Escuela;uid=root;pwd=admin");
+            ob.UseMySQL("server=localhost;database=Spuchifai;uid=root;pwd=admin");
         }
         public void altaAlbum(Album album)
         {
