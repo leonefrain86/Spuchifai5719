@@ -7,7 +7,7 @@ namespace PruebaSpuchifai
     [TestClass]
     public class TestCreacionDB
     {
-            public static MYSQLADO AdoMySQL { get; set; }
+        public static MYSQLADO AdoMySQL { get; set; }
 
         [ClassInitialize]
         public static void SetUpClase(TestContext context)
@@ -21,7 +21,23 @@ namespace PruebaSpuchifai
         {
             AdoMySQL.Database.EnsureCreated();
         }
-    
-    
+
+        [TestMethod]
+        public void ReproducirCancion()
+        {
+            var ado = new MYSQLADO();
+            ado.Database.EnsureDeleted();
+            ado.Database.EnsureCreated();
+
+            Cliente unCliente = new Cliente("Ana", "Rodrigez", " anarodrigues@gmail.com", "truytu");
+            ado.altaCliente(unCliente);
+
+            Cancion unaCancion = new Cancion("lalala", 8);
+            ado.altaCancion(unaCancion);
+
+            //unCliente.ReproducirCancion(unaCancion);
+
+        }
+
     }
 }

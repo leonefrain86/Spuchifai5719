@@ -29,7 +29,14 @@ namespace Spuchifai5719
         {
             Reproducciones = new List<Reproduccion>();
         }
+        public Cliente(string nombre, string apellido ,string mail, string contraseña)
+        {
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.Mail = mail;
+            this.Contraseña = contraseña;
 
+        }
         public void ReproducirCancion(Cancion cancion)
         {
             Reproduccion unaReproduccion = new Reproduccion(this, cancion);

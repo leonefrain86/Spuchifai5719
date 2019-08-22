@@ -22,7 +22,10 @@ namespace Spuchifai5719
 
         public List<Reproduccion> Reproducciones { get; set; }
 
-        public Cancion() { }
+        public Cancion()
+        {
+            Reproducciones = new List<Reproduccion>();
+        }
 
         public Cancion(string nombre, byte nroOrden)
         {
