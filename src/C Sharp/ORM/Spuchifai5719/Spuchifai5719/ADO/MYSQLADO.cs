@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Spuchifai5719.ADO
 {
@@ -15,7 +16,7 @@ namespace Spuchifai5719.ADO
 
         protected override void OnConfiguring(DbContextOptionsBuilder ob)
         {
-            ob.UseMySQL("server=localhost;database=Spuchifai;uid=root;pwd=admin");
+            ob.UseMySQL("server=localhost;database=Spuchifai;uid=root;pwd=root");
         }
         public void altaAlbum(Album album)
         {
@@ -41,6 +42,9 @@ namespace Spuchifai5719.ADO
             SaveChanges();
         }
 
-      
+        public Cliente clientePorUserYPass(string mailUser, string pass)
+        {
+            return Clientes.FirstOrDefault(c => (c.Mail == mailUser && c.Contraseña == pass));
+        }
     }
 }

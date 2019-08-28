@@ -17,7 +17,7 @@ namespace Spuchifai5719
         [ForeignKey("idCancion"), Required]
         public Cancion cancion { get; set; }
 
-        [Column("fechaHora"), Required]
+        [Column("fechaHora")]
         public DateTime FechaHora { get; set; }
 
         public Reproduccion()

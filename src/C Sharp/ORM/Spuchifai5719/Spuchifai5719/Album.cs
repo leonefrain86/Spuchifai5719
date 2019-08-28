@@ -19,17 +19,18 @@ namespace Spuchifai5719
         [Column("nombre"), StringLength(45), Required]
         public string Nombre { get; set; }
 
-        [Column("fechaLanzamiento"), Required]
+        [Column("fechaLanzamiento")]
         public DateTime FechaLanzamiento { get; set; }
 
         public List<Cancion> Canciones { get; set; }
 
         public Album() { }
 
-        public Album(string nombre)
+        public Album(string nombre, Banda unaBanda)
         {
             Nombre = nombre;
             FechaLanzamiento = DateTime.Now;
+            Banda = unaBanda;
         }
 
         public int CantidadDeReproduccionesPorAlbum()

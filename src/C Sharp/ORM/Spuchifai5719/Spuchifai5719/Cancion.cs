@@ -27,10 +27,11 @@ namespace Spuchifai5719
             Reproducciones = new List<Reproduccion>();
         }
 
-        public Cancion(string nombre, byte nroOrden)
+        public Cancion(string nombre, byte nroOrden, Album unAlbum): this ()
         {
             Nombre = nombre;
             NroOrden = nroOrden;
+            Album = unAlbum;
         }
 
         public void AgregarReproduccion(Reproduccion reproduccion)

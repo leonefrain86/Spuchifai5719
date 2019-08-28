@@ -14,6 +14,6 @@ namespace Spuchifai5719.ADO
 
         void altaCliente(Cliente cliente);
 
-        
+        Cliente clientePorUserYPass(string mailUser, string pass);
     }
 }

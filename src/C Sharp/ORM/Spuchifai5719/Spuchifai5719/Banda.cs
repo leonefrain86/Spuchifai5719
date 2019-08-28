@@ -23,6 +23,12 @@ namespace Spuchifai5719
 
         public Banda() { }
 
+        public Banda(string nombre)
+        {
+            Nombre = nombre;
+            AnioFundacion = DateTime.Now;
+        }
+
         public int CantidadDeReproduccionesPorBanda()
         {
             return Albumes.Sum(a => a.CantidadDeReproduccionesPorAlbum());
