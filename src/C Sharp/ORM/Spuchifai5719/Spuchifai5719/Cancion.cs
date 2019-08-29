@@ -1,15 +1,14 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Spuchifai5719
 {
     [Table("Cancion")]
-    public class Cancion
+    public class Cancion : ConListaReproduccion
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key, Column("idCancion")]
-        public byte Id { get; set; }
+        public int Id { get; set; }
 
         [ForeignKey("idAlbum"), Required]
         public Album Album { get; set; }
@@ -20,12 +19,9 @@ namespace Spuchifai5719
         [Column("nroOrden"), Required]
         public byte NroOrden { get; set; }
 
-        public List<Reproduccion> Reproducciones { get; set; }
+        
 
-        public Cancion()
-        {
-            Reproducciones = new List<Reproduccion>();
-        }
+        public Cancion(): base() { }
 
         public Cancion(string nombre, byte nroOrden, Album unAlbum): this ()
         {
@@ -34,10 +30,7 @@ namespace Spuchifai5719
             Album = unAlbum;
         }
 
-        public void AgregarReproduccion(Reproduccion reproduccion)
-        {
-            Reproducciones.Add(reproduccion);
-        }
+        
 
         public int CantidadReproducciones()
         {

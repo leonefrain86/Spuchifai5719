@@ -17,7 +17,7 @@ namespace Spuchifai5719
         public string Nombre { get; set; }
 
         [Column("anioFundacion"), Required]
-        public DateTime AnioFundacion { get; set; }
+        public short AnioFundacion { get; set; }
 
         public List<Album> Albumes { get; set; }
 
@@ -26,12 +26,12 @@ namespace Spuchifai5719
         public Banda(string nombre)
         {
             Nombre = nombre;
-            AnioFundacion = DateTime.Now;
+            AnioFundacion = Convert.ToInt16(DateTime.Now.Year);
         }
 
         public int CantidadDeReproduccionesPorBanda()
         {
-            return Albumes.Sum(a => a.CantidadDeReproduccionesPorAlbum());
+            return Albumes.Sum(a => a.CantidadDeReproducciones());
         }
     }
 }

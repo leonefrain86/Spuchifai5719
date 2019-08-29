@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Spuchifai5719
 {
     [Table("Reproduccion")]
-    public class Reproduccion
+    public class Reproduccion 
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key, Column("idReproduccion")]
@@ -20,10 +20,7 @@ namespace Spuchifai5719
         [Column("fechaHora")]
         public DateTime FechaHora { get; set; }
 
-        public Reproduccion()
-        {
-           
-        }
+        public Reproduccion() { }
 
         public Reproduccion(Cliente cliente, Cancion cancion)
         {

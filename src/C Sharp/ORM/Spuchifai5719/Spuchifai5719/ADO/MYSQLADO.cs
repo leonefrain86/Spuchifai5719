@@ -1,7 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace Spuchifai5719.ADO
@@ -44,7 +42,18 @@ namespace Spuchifai5719.ADO
 
         public Cliente clientePorUserYPass(string mailUser, string pass)
         {
-            return Clientes.FirstOrDefault(c => (c.Mail == mailUser && c.Contraseña == pass));
+            return Clientes.FirstOrDefault(c => (c.Mail == mailUser && c.Password == pass));
+        }
+
+        public List<Cancion> traerCanciones()
+        {        
+            return Canciones.ToList();
+        }
+
+        public void actualizarCliente(Cliente cliente)
+        {
+            Update<Cliente>(cliente);
+            SaveChanges();
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Spuchifai5719.ADO
 {
@@ -15,5 +13,9 @@ namespace Spuchifai5719.ADO
         void altaCliente(Cliente cliente);
 
         Cliente clientePorUserYPass(string mailUser, string pass);
+
+        List<Cancion> traerCanciones();
+
+        void actualizarCliente(Cliente cliente);
     }
 }

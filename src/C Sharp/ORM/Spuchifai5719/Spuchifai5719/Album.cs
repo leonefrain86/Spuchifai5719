@@ -11,7 +11,7 @@ namespace Spuchifai5719
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key, Column("idAlbum")]
-        public byte Id { get; set; }
+        public int Id { get; set; }
 
         [ForeignKey("idBanda"), Required]
         public Banda Banda { get; set; }
@@ -33,7 +33,7 @@ namespace Spuchifai5719
             Banda = unaBanda;
         }
 
-        public int CantidadDeReproduccionesPorAlbum()
+        public int CantidadDeReproducciones()
         {
             return Canciones.Sum(c => c.CantidadReproducciones());
         }
