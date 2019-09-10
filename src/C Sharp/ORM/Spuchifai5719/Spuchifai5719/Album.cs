@@ -37,5 +37,10 @@ namespace Spuchifai5719
         {
             return Canciones.Sum(c => c.CantidadReproducciones());
         }
+
+        public int CantidadDeReproduccionesPorId(int Id)
+        {
+            return Canciones.FirstOrDefault(x => x.Id == Id).Reproducciones.Count;
+        }
     }
 }

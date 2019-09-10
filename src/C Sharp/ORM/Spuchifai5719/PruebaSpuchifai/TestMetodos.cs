@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace PruebaSpuchifai
 {
     [TestClass]
-    public class TestCreacionReproduccion
+    public class TestMetodos
     {
         [TestMethod]
         public void Creacion_de_la_tabla_Reproduccion_con_un_cliente()
