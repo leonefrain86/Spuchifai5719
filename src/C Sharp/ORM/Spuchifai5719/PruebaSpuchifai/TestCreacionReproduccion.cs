@@ -9,7 +9,7 @@ namespace PruebaSpuchifai
     public class TestCreacionReproduccion
     {
         [TestMethod]
-        public void CreacionDeReproduccion()
+        public void Creacion_de_la_tabla_Reproduccion_con_un_cliente()
         {
             var ado = new MYSQLADO();
 
@@ -28,14 +28,40 @@ namespace PruebaSpuchifai
             Cliente unCliente = new Cliente("Ana", "Rodrigez", "anarodrigues@gmail.com", "truytu");
 
             unCliente.ReproducirCancion(unaCancion);
-            ado.altaCliente(unCliente);
-
-            int res = unaBanda.CantidadDeReproduccionesPorBanda();
-            Assert.AreEqual(1, res);       
+            ado.altaCliente(unCliente);     
         }
 
         [TestMethod]
-        public void CrearReproduccionDosClientes()
+        public void Test_de_cantidad_de_reproducciones_por_Banda_asegurando_que_hay_2()
+        {
+            var ado = new MYSQLADO();
+
+            ado.Database.EnsureDeleted();
+            ado.Database.EnsureCreated();
+
+            Banda unaBanda = new Banda("TXT");
+            ado.altaBanda(unaBanda);
+
+            Album unAlbum = new Album("ROR", unaBanda);
+            ado.altaAlbum(unAlbum);
+
+            Cancion unaCancion = new Cancion("D3C", 8, unAlbum);
+            ado.altaCancion(unaCancion);
+
+            Cancion otraCancion = new Cancion("WRE", 9, unAlbum);
+
+            Cliente unCliente = new Cliente("Anuel", "Rodrigez", "anarodrigues@gmail.com", "ryuu");
+
+            unCliente.ReproducirCancion(unaCancion);
+            unCliente.ReproducirCancion(otraCancion);
+            ado.altaCliente(unCliente);
+
+            int res = unaBanda.CantidadDeReproduccionesPorBanda();
+            Assert.AreEqual(2, res);
+        }
+
+        [TestMethod]
+        public void Creacion_de_la_tabla_Reproduccion_con_mas_de_un_cliente()
         {
             var ado = new MYSQLADO();
 
@@ -55,19 +81,21 @@ namespace PruebaSpuchifai
             Cliente unCliente2 = new Cliente("Roberto", "Cuevas", "robertocuevas@gmail.com", "ejhguguf");
             ado.altaCliente(unCliente2);
             ado.altaCliente(unCliente1);
+
             unCliente1.ReproducirCancion(unaCancion);
             unCliente2.ReproducirCancion(unaCancion);
             unCliente1.ReproducirCancion(unaCancion);
+
             ado.actualizarCliente(unCliente1);
             ado.actualizarCliente(unCliente2);
 
             int res = unaCancion.CantidadReproducciones();
             Assert.AreEqual(3, res);
-
+             
         }
         
         [TestMethod]
-        public void Verificacion_de_Cliente()
+        public void Test_Verificacion_de_Cliente_por_gmail_y_password()
         {
             var ado = new MYSQLADO();
             var res2 = ado.clientePorUserYPass("narodrigues@gmail.com", "truytu");
@@ -76,7 +104,7 @@ namespace PruebaSpuchifai
         }
 
         [TestMethod]
-        public void TestTraerCanciones()
+        public void Test_de_Traer_la_lista_de_Canciones()
         {
             var ado = new MYSQLADO();
 

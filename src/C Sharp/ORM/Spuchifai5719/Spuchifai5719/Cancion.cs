@@ -30,8 +30,6 @@ namespace Spuchifai5719
             Album = unAlbum;
         }
 
-        
-
         public int CantidadReproducciones()
         {
             return Reproducciones.Count;
