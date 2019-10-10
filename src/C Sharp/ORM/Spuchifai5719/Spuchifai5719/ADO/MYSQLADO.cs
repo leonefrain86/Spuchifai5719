@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using NETCore.Encrypt;
 using System.Linq;
 
 namespace Spuchifai5719.ADO
@@ -36,13 +37,15 @@ namespace Spuchifai5719.ADO
 
         public void altaCliente(Cliente cliente)
         {
+            cliente.Password = EncryptProvider.Sha256(cliente.Password);
             Clientes.Add(cliente);
             SaveChanges();
         }
 
         public Cliente clientePorUserYPass(string mailUser, string pass)
         {
-            return Clientes.FirstOrDefault(c => (c.Mail == mailUser && c.Password == pass));
+            var passEncrip = EncryptProvider.Sha256(pass);
+            return Clientes.FirstOrDefault(c => (c.Mail == mailUser && c.Password == passEncrip));
         }
 
         public List<Cancion> traerCanciones()
