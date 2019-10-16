@@ -16,7 +16,7 @@ namespace PruebaSpuchifai
             ado.Database.EnsureDeleted();
             ado.Database.EnsureCreated();
 
-            Banda unaBanda = new Banda("RXR");
+            Banda unaBanda = new Banda("RXR", "12345");
             ado.altaBanda(unaBanda);
 
             Album unAlbum = new Album("RAR", unaBanda);
@@ -39,7 +39,7 @@ namespace PruebaSpuchifai
             ado.Database.EnsureDeleted();
             ado.Database.EnsureCreated();
 
-            Banda unaBanda = new Banda("TXT");
+            Banda unaBanda = new Banda("TXT", "12345");
             ado.altaBanda(unaBanda);
 
             Album unAlbum = new Album("ROR", unaBanda);
@@ -68,7 +68,7 @@ namespace PruebaSpuchifai
             ado.Database.EnsureDeleted();
             ado.Database.EnsureCreated();
 
-            Banda unaBanda = new Banda("RXR");
+            Banda unaBanda = new Banda("RXR", "12345");
             ado.altaBanda(unaBanda);
 
             Album unAlbum = new Album("RAR", unaBanda);
@@ -108,7 +108,7 @@ namespace PruebaSpuchifai
         {
             var ado = new MYSQLADO();
 
-            Banda unaBanda = new Banda("XR");
+            Banda unaBanda = new Banda("XR", "12345");
             ado.altaBanda(unaBanda);
 
             Album unAlbum = new Album("AR", unaBanda);

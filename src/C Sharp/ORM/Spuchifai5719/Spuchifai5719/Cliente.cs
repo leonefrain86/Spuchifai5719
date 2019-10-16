@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using NETCore.Encrypt;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Spuchifai5719
@@ -19,17 +20,17 @@ namespace Spuchifai5719
         [Column("mail"), StringLength(45), Required]
         public string Mail { get; set; }
 
-        [Column("contraseña"), StringLength(45), Required]
+        [Column("contraseña"), StringLength(256), Required]
         public string Password { get; set; }       
 
         public Cliente() : base() {}
 
-        public Cliente(string nombre, string apellido, string mail, string contraseña) : this()
+        public Cliente(string nombre, string apellido, string mail, string contrasenia) : this()
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
             this.Mail = mail;
-            this.Password = contraseña;
+            this.Password = EncryptProvider.Sha256(contrasenia);
 
         }
         public void ReproducirCancion(Cancion cancion) 

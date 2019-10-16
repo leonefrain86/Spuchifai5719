@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NETCore.Encrypt;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -21,12 +22,16 @@ namespace Spuchifai5719
 
         public List<Album> Albumes { get; set; }
 
+        [Column("contrasenia"), StringLength(256), Required]
+        public string Password { get; set; }
+
         public Banda() { }
 
-        public Banda(string nombre)
+        public Banda(string nombre, string contrasenia)
         {
-            Nombre = nombre;
-            AnioFundacion = Convert.ToInt16(DateTime.Now.Year);
+            this.Nombre = nombre;
+            this.AnioFundacion = Convert.ToInt16(DateTime.Now.Year);
+            this.Password = EncryptProvider.Sha256(contrasenia);
         }
 
         public int CantidadDeReproduccionesPorBanda()
