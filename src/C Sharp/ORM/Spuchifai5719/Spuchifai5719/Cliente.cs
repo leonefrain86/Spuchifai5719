@@ -20,7 +20,7 @@ namespace Spuchifai5719
         [Column("mail"), StringLength(45), Required]
         public string Mail { get; set; }
 
-        [Column("contraseña"), StringLength(256), Required]
+        [Column("contraseña"), StringLength(64), Required]
         public string Password { get; set; }       
 
         public Cliente() : base() {}
@@ -30,7 +30,7 @@ namespace Spuchifai5719
             this.Nombre = nombre;
             this.Apellido = apellido;
             this.Mail = mail;
-            this.Password = EncryptProvider.Sha256(contrasenia);
+            this.Password = contrasenia;
 
         }
         public void ReproducirCancion(Cancion cancion) 

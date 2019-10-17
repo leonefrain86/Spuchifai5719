@@ -2,6 +2,7 @@
 using Spuchifai5719;
 using Spuchifai5719.ADO;
 using System.Collections.Generic;
+using NETCore.Encrypt;
 
 namespace PruebaSpuchifai
 {
@@ -17,6 +18,7 @@ namespace PruebaSpuchifai
             ado.Database.EnsureCreated();
 
             Banda unaBanda = new Banda("RXR", "12345");
+            unaBanda.Password = EncryptProvider.Sha256(unaBanda.Password);
             ado.altaBanda(unaBanda);
 
             Album unAlbum = new Album("RAR", unaBanda);
@@ -26,6 +28,7 @@ namespace PruebaSpuchifai
             ado.altaCancion(unaCancion);
 
             Cliente unCliente = new Cliente("Ana", "Rodrigez", "anarodrigues@gmail.com", "truytu");
+            unCliente.Password = EncryptProvider.Sha256(unCliente.Password); 
 
             unCliente.ReproducirCancion(unaCancion);
             ado.altaCliente(unCliente);     
@@ -40,6 +43,7 @@ namespace PruebaSpuchifai
             ado.Database.EnsureCreated();
 
             Banda unaBanda = new Banda("TXT", "12345");
+            unaBanda.Password = EncryptProvider.Sha256(unaBanda.Password);
             ado.altaBanda(unaBanda);
 
             Album unAlbum = new Album("ROR", unaBanda);
@@ -51,6 +55,7 @@ namespace PruebaSpuchifai
             Cancion otraCancion = new Cancion("WRE", 9, unAlbum);
 
             Cliente unCliente = new Cliente("Anuel", "Rodrigez", "anarodrigues@gmail.com", "ryuu");
+            unCliente.Password = EncryptProvider.Sha256(unCliente.Password);
 
             unCliente.ReproducirCancion(unaCancion);
             unCliente.ReproducirCancion(otraCancion);
@@ -69,6 +74,7 @@ namespace PruebaSpuchifai
             ado.Database.EnsureCreated();
 
             Banda unaBanda = new Banda("RXR", "12345");
+            unaBanda.Password = EncryptProvider.Sha256(unaBanda.Password);
             ado.altaBanda(unaBanda);
 
             Album unAlbum = new Album("RAR", unaBanda);
@@ -81,6 +87,8 @@ namespace PruebaSpuchifai
             Cliente unCliente2 = new Cliente("Roberto", "Cuevas", "robertocuevas@gmail.com", "ejhguguf");
             ado.altaCliente(unCliente2);
             ado.altaCliente(unCliente1);
+            unCliente1.Password = EncryptProvider.Sha256(unCliente1.Password);
+            unCliente2.Password = EncryptProvider.Sha256(unCliente2.Password);
 
             unCliente1.ReproducirCancion(unaCancion);
             unCliente2.ReproducirCancion(unaCancion);
@@ -98,8 +106,7 @@ namespace PruebaSpuchifai
         public void Test_Verificacion_de_Cliente_por_gmail_y_password()
         {
             var ado = new MYSQLADO();
-            var res2 = ado.clientePorUserYPass("narodrigues@gmail.com", "truytu");
-
+            var res2 = ado.clientePorUserYPass("narodrigues@gmail.com", EncryptProvider.Sha256("truytu"));
             Assert.AreEqual(null, res2);
         }
 
@@ -109,6 +116,7 @@ namespace PruebaSpuchifai
             var ado = new MYSQLADO();
 
             Banda unaBanda = new Banda("XR", "12345");
+            unaBanda.Password = EncryptProvider.Sha256(unaBanda.Password);
             ado.altaBanda(unaBanda);
 
             Album unAlbum = new Album("AR", unaBanda);

@@ -37,15 +37,13 @@ namespace Spuchifai5719.ADO
 
         public void altaCliente(Cliente cliente)
         {
-            cliente.Password = EncryptProvider.Sha256(cliente.Password);
             Clientes.Add(cliente);
             SaveChanges();
         }
 
         public Cliente clientePorUserYPass(string mailUser, string pass)
         {
-            var passEncrip = EncryptProvider.Sha256(pass);
-            return Clientes.FirstOrDefault(c => (c.Mail == mailUser && c.Password == passEncrip));
+            return Clientes.FirstOrDefault(c => (c.Mail == mailUser && c.Password == pass));
         }
 
         public List<Cancion> traerCanciones()

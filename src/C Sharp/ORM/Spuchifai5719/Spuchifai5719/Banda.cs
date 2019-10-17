@@ -22,7 +22,7 @@ namespace Spuchifai5719
 
         public List<Album> Albumes { get; set; }
 
-        [Column("contrasenia"), StringLength(256), Required]
+        [Column("contrasenia"), StringLength(64), Required]
         public string Password { get; set; }
 
         public Banda() { }
@@ -31,7 +31,7 @@ namespace Spuchifai5719
         {
             this.Nombre = nombre;
             this.AnioFundacion = Convert.ToInt16(DateTime.Now.Year);
-            this.Password = EncryptProvider.Sha256(contrasenia);
+            this.Password = contrasenia;
         }
 
         public int CantidadDeReproduccionesPorBanda()

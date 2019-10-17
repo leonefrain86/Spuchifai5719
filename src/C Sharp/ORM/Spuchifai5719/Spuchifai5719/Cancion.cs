@@ -19,8 +19,6 @@ namespace Spuchifai5719
         [Column("nroOrden"), Required]
         public byte NroOrden { get; set; }
 
-        
-
         public Cancion(): base() { }
 
         public Cancion(string nombre, byte nroOrden, Album unAlbum): this ()
