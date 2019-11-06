@@ -5,4 +5,14 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Spuchifai5719\Spuchifai5719.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BiblioMenu">
+      <HintPath>..\..\..\Library\BiblioMenu.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
