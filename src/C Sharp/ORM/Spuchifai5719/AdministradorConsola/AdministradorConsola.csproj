@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <Reference Include="BiblioMenu">
-      <HintPath>..\..\..\Library\BiblioMenu.dll</HintPath>
+      <HintPath>..\Library\BiblioMenu.dll</HintPath>
     </Reference>
   </ItemGroup>
 

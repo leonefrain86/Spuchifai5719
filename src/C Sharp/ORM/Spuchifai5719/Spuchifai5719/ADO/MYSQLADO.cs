@@ -13,6 +13,10 @@ namespace Spuchifai5719.ADO
         DbSet<Reproduccion> Reproduciones { get; set; }
         DbSet<Cliente> Clientes { get; set; }
 
+        public MYSQLADO() : base() { }
+
+        internal MYSQLADO(DbContextOptions dbo) : base(dbo) { }
+
         protected override void OnConfiguring(DbContextOptionsBuilder ob)
         {
             ob.UseMySQL("server=localhost;database=Spuchifai;uid=root;pwd=root");
@@ -56,5 +60,7 @@ namespace Spuchifai5719.ADO
             Update<Cliente>(cliente);
             SaveChanges();
         }
+
+        public List<Banda> obtenerBandas() => Bandas.ToList();
     }
 }
