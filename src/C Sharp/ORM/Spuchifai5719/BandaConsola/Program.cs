@@ -6,7 +6,7 @@ namespace BandaConsola
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
