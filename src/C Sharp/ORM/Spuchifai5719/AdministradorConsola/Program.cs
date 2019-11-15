@@ -8,15 +8,38 @@ namespace AdministradorConsola
     {
         static void Main(string[] args)
         {
-            var menuAltaCategoria = new MenuAltaCategoria() { Nombre = "Alta Categoria" };
-            var menuListaCategoria = new MenuListaCategorias() { Nombre = "Listado Categorias" };
+            var menuAltaBanda = new MenuAltaBanda() { Nombre = "Alta Banda" };
+            var menuListaBanda = new MenuListaBanda() { Nombre = "Listado de Bandas" };
 
-            var menuCategoria = new MenuCompuesto() { Nombre = "Categorias" };
-            menuCategoria.agregarMenu(menuAltaCategoria);
-            menuCategoria.agregarMenu(menuListaCategoria);
+            var menuAltaAlbum = new MenuAltaAlbum() { Nombre = "Alta Album" };
+            var menuListaAlbum = new MenuListaAlbum() { Nombre = "Listado de Álbumes" };
 
-            var menuPrincipal = new MenuCompuesto() { Nombre = "Menu Gerente" };
-            menuPrincipal.agregarMenu(menuCategoria);
+            var menuAltaCancion = new MenuAltaCancion() { Nombre = "Alta Canciones" };
+            var menuListaCancion = new MenuListaCancion() { Nombre = "Listado de Canciones" };
+
+            var menuListaCliente = new MenuListaCliente() { Nombre = "Listado de Clientes" };
+
+            var menuBanda = new MenuCompuesto() { Nombre = "Bandas" };
+            menuBanda.agregarMenu(menuAltaBanda);
+            menuBanda.agregarMenu(menuListaBanda);
+
+            var menuAlbum = new MenuCompuesto() { Nombre = "Álbumes" };
+            menuAlbum.agregarMenu(menuAltaAlbum);
+            menuAlbum.agregarMenu(menuListaAlbum);
+
+            var menuCancion = new MenuCompuesto() { Nombre = "Canciones" };
+            menuCancion.agregarMenu(menuAltaCancion);
+            menuCancion.agregarMenu(menuListaCancion);
+
+            var menuCliente = new MenuCompuesto() { Nombre = "Clientes" };
+            menuCliente.agregarMenu(menuListaCliente);
+           
+
+            var menuPrincipal = new MenuCompuesto() { Nombre = "Menu Administrador" };
+            menuPrincipal.agregarMenu(menuBanda);
+            menuPrincipal.agregarMenu(menuAlbum);
+            menuPrincipal.agregarMenu(menuCancion);
+            menuPrincipal.agregarMenu(menuCliente);
 
             menuPrincipal.mostrar();
 

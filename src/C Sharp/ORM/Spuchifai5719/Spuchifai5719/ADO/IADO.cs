@@ -17,6 +17,9 @@ namespace Spuchifai5719.ADO
         List<Cancion> traerCanciones();
 
         void actualizarCliente(Cliente cliente);
+        List<Cancion> obtenerCanciones();
+        List<Cliente> obtenerClientes();
+        List<Album> obtenerAlbumes();
         List<Banda> obtenerBandas();
     }
 }

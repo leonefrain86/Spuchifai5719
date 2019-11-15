@@ -2,6 +2,8 @@
 using MenuesConsola;
 using Spuchifai5719;
 using Spuchifai5719.ADO;
+using static System.ReadLine;
+using NETCore.Encrypt;
 
 namespace AdministradorConsola.Menu
 {
@@ -13,12 +15,12 @@ namespace AdministradorConsola.Menu
             base.mostrar();
             Console.WriteLine();
             var nombre = prompt("Ingrese nombre de la banda: ");
-            var contrasenia = prompt("Ingrese la contraseña: ");
+            var contrasenia = EncryptProvider.Sha256(ReadPassword("Ingrese la contraseña: "));
             banda = new Banda(nombre, contrasenia);
             try
             {
-                ADOAdministrador.ADO.agregarBanda(Banda);
-                Console.WriteLine("Categoria agregada con exito");
+                ADOAdministrador.ADO.altaBanda(banda);
+                Console.WriteLine("Banda agregada con exito");
             }
             catch (Exception e)
             {
