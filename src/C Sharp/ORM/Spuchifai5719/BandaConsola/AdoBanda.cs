@@ -1,10 +1,10 @@
 ﻿using Spuchifai5719.ADO;
 
-namespace AdministradorConsola.Menu
+namespace AdministradorConsola
 {
-    public class AdoBanda
+    public static class AdoBanda
     {
         public static IADO ADO { get; set; } =
-            FactoryAdoMySQL.GetAdoDesdeJson("appsettings.json", "gerente");
+            FactoryAdoMySQL.GetAdoDesdeJson("appsettings.json", "banda");
     }
 }
