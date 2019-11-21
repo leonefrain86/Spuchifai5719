@@ -13,6 +13,6 @@ namespace BandaConsola.Menu
             => Console.WriteLine($"{elemento.Id} - {elemento.Nombre}");
 
         public override List<Banda> obtenerLista()
-            => ADOBanda.ADO.obtenerBandas();
+            => AdoBanda.ADO.obtenerBandas();
     }
 }

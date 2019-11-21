@@ -2,9 +2,9 @@
 
 namespace BandaConsola
 {
-    public static class ADOBanda
+    public static class AdoBanda
     {
         public static IADO ADO { get; set; } =
-            FactoryADOMySQL.GetAdoDesdeJson("appsettings.json", "banda");
+            FactoryADOMySQL.GetAdoDesdeJson("appsettings.json", "Banda");
     }
 }

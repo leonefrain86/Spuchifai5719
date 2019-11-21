@@ -33,7 +33,7 @@ namespace BandaConsola.Menu
 
             try
             {
-                ADOBanda.ADO.altaCancion(Cancion);
+                AdoBanda.ADO.altaCancion(Cancion);
                 Console.WriteLine("Cancion dado de alta con exito");
             }
             catch (Exception e)

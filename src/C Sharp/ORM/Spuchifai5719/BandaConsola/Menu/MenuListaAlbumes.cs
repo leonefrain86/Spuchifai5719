@@ -9,9 +9,9 @@ namespace BandaConsola.Menu
     public class MenuListaAlbumes : MenuListador<Album>
     {
         public override void imprimirElemento(Album unAlbum) 
-            => Console.WriteLine($"{unAlbum.Id} - {unAlbum.Nombre}");
+            => Console.WriteLine($"{unAlbum.Id} - {unAlbum.Nombre} - {unAlbum.CantidadDeReproducciones()}");
 
         public override List<Album> obtenerLista() 
-            => ADOBanda.ADO.obtenerAlbumes();        
+            => AdoBanda.ADO.obtenerAlbumes();        
     }
 }

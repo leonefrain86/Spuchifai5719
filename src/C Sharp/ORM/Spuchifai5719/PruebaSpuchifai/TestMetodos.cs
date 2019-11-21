@@ -93,12 +93,13 @@ namespace PruebaSpuchifai
             unCliente1.ReproducirCancion(unaCancion);
             unCliente2.ReproducirCancion(unaCancion);
             unCliente1.ReproducirCancion(unaCancion);
+            unCliente1.ReproducirCancion(unaCancion);
 
             ado.actualizarCliente(unCliente1);
             ado.actualizarCliente(unCliente2);
 
             int res = unaCancion.CantidadReproducciones();
-            Assert.AreEqual(3, res);
+            Assert.AreEqual(4, res);
              
         }
         
@@ -132,5 +133,7 @@ namespace PruebaSpuchifai
             Assert.AreEqual(2, cantidadCanciones);
 
         }
+
+
     }
 }
