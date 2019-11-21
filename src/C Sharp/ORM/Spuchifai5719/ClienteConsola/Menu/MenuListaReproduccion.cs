@@ -9,7 +9,7 @@ namespace ClienteConsola.Menu
     public class MenuListaReproduccion : MenuListador<Reproduccion>
     {
         public override void imprimirElemento(Reproduccion elemento)
-          => Console.WriteLine($"{elemento.Id}");
+          => Console.WriteLine($"{elemento.Id} - Cliente: {elemento.cliente.Nombre} - Canción: {elemento.cancion.Nombre} - Hora: {elemento.FechaHora}");
 
         public override List<Reproduccion> obtenerLista()
             => ADOCliente.ADO.obtenerReproducciones();

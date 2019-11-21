@@ -12,6 +12,7 @@ namespace ClienteConsola.Menu
     {
         private MenuListaCancion menuListaCancion { get; set; }
         public Reproduccion reproduccion { get; set; }
+        public Cliente cliente { get; set; }
         public MenuAltaReproduccion(MenuListaCancion MenuListaCancion)
         {
             menuListaCancion = MenuListaCancion;
@@ -23,15 +24,15 @@ namespace ClienteConsola.Menu
             Console.WriteLine();
             Console.WriteLine("Seleccione la canción a escuchar x)");
             var cancion = menuListaCancion.seleccionarElemento();
-            reproduccion = new Reproduccion() { cancion = cancion };
             try
             {
-                ADOCliente.ADO.altaReproduccion(reproduccion);
+                cliente.ReproducirCancion(cancion);
+                ADOCliente.ADO.actualizarCliente(cliente);
                 Console.WriteLine("Canción escuchada con éxito");
             }
             catch (Exception e)
             {
-                Console.WriteLine($"No se pudo cargar la categoria por: {e.Message}");
+                Console.WriteLine($"No se pudo cargar la reproducción por: {e.InnerException.Message}");
             }
             Console.ReadKey();
         }

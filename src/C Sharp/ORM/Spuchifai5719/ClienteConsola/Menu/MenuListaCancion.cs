@@ -10,7 +10,7 @@ namespace ClienteConsola
     public class MenuListaCancion : MenuListador<Cancion>
     {
         public override void imprimirElemento(Cancion elemento)
-          => Console.WriteLine($"{elemento.Id} - {elemento.Nombre}");
+          => Console.WriteLine($"{elemento.NroOrden} - {elemento.Nombre} - Álbum: {elemento.Album.Nombre} - Banda: {elemento.Album.Banda.Nombre}");
 
         public override List<Cancion> obtenerLista()
             => ADOCliente.ADO.obtenerCanciones();

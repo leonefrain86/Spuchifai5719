@@ -17,13 +17,13 @@ namespace AdministradorConsola
         {
             menuListaAlbum = MenuListaAlbum;
             menuListaBanda = MenuListaBanda;
-            Nombre = "Alta Producto";
+            Nombre = "Alta Cancion";
         }
         public override void mostrar()
         {
             base.mostrar();
             Console.WriteLine();
-            var nombre = prompt("Ingrese nombre de la canción: ");
+            var nombre = prompt("Ingrese nombre de la canción");
             Console.Write("Ingrese el número de orden: ");
             var nroOrden = Convert.ToByte(Console.ReadLine());
             Console.WriteLine("Seleccione el álbum x)");
@@ -32,11 +32,11 @@ namespace AdministradorConsola
             try
             {
                 ADOAdministrador.ADO.altaCancion(cancion);
-                Console.WriteLine("Canción agregada con exito");
+                Console.WriteLine("Canción agregada con éxito");
             }
             catch (Exception e)
             {
-                Console.WriteLine($"No se pudo cargar la categoria por: {e.Message}");
+                Console.WriteLine($"No se pudo cargar la canción por: {e.Message}");
             }
             Console.ReadKey();
         }

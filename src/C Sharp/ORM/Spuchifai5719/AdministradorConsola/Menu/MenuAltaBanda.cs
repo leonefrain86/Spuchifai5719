@@ -16,17 +16,17 @@ namespace AdministradorConsola.Menu
         {
             base.mostrar();
             Console.WriteLine();
-            var nombre = prompt("Ingrese nombre de la banda: ");
+            var nombre = prompt("Ingrese nombre de la banda");
             var contrasenia = EncryptProvider.Sha256(ReadPassword("Ingrese la contraseña: "));
             banda = new Banda(nombre, contrasenia);
             try
             {
                 ADOAdministrador.ADO.altaBanda(banda);
-                Console.WriteLine("Banda agregada con exito");
+                Console.WriteLine("Banda agregada con éxito");
             }
             catch (Exception e)
             {
-                Console.WriteLine($"No se pudo cargar la categoria por: {e.Message}");
+                Console.WriteLine($"No se pudo cargar la banda por: {e.Message}");
             }
             Console.ReadKey();
         }
