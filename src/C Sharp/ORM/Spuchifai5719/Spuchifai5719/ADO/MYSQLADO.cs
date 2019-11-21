@@ -33,6 +33,11 @@ namespace Spuchifai5719.ADO
             SaveChanges();
         }
 
+        public Banda bandaPorNameYPass(string nameBanda, string pass)
+        {
+            return Bandas.FirstOrDefault(c => (c.Nombre == nameBanda && c.Password == pass));
+        }
+
         public void altaCancion(Cancion cancion)
         {
             Canciones.Add(cancion);

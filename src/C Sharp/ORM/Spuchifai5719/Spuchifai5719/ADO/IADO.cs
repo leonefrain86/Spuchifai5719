@@ -5,6 +5,7 @@ namespace Spuchifai5719.ADO
     public interface IADO
     {
         void altaBanda(Banda banda);
+        Banda bandaPorNameYPass(string nameBanda, string pass);
 
         void altaAlbum(Album album);   
 

@@ -10,12 +10,12 @@ namespace BandaConsola.Menu
 {
     public class MenuAltaAlbum : MenuComponente
     {
-        private MenuListaBandas MenuListaBandas { get; set; }
         private Album Album { get; set; }
-        
-        public MenuAltaAlbum(MenuListaBandas menuListaBandas)
+        private Banda Banda { get; set; }
+
+        public MenuAltaAlbum(Banda banda)
         {
-            MenuListaBandas = menuListaBandas;
+            Banda = banda;
             Nombre = "Alta Album";
         }
 
@@ -24,10 +24,10 @@ namespace BandaConsola.Menu
             base.mostrar();
 
             var nombre = prompt("Ingrese nombre del album");
-            Console.WriteLine("Seleccione una banda: ");
-            var banda = MenuListaBandas.seleccionarElemento();
+            //Console.WriteLine("Seleccione una banda: ");
+            //var banda = MenuListaBandas.seleccionarElemento();
 
-            Album = new Album(nombre, banda);
+            Album = new Album(nombre, Banda);
 
             try
             {
