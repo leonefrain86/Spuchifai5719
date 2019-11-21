@@ -4,7 +4,7 @@ using Spuchifai5719;
 using Spuchifai5719.ADO;
 using static System.ReadLine;
 using NETCore.Encrypt;
-using AdministradorConsola.Menu;
+using BandaConsola;
 
 namespace BandaConsola.Menu
 {
@@ -27,7 +27,7 @@ namespace BandaConsola.Menu
             Console.WriteLine("Seleccione una banda: ");
             var banda = MenuListaBandas.seleccionarElemento();
 
-            Album = new Album(nombre, banda)
+            Album = new Album(nombre, banda);
 
             try
             {

@@ -6,12 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ReadLine" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Spuchifai5719\Spuchifai5719.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="BiblioMenu">
-      <HintPath>..\..\..\Library\BiblioMenu.dll</HintPath>
+      <HintPath>..\Library\BiblioMenu.dll</HintPath>
     </Reference>
   </ItemGroup>
 

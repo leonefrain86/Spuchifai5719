@@ -4,7 +4,7 @@ using Spuchifai5719;
 using Spuchifai5719.ADO;
 using static System.ReadLine;
 using NETCore.Encrypt;
-using BandaConsola.Menu;
+using BandaConsola;
 
 namespace BandaConsola.Menu
 {
@@ -24,11 +24,11 @@ namespace BandaConsola.Menu
             base.mostrar();
 
             var nombre = prompt("Ingrese nombre de la cancion");
-            var nroOrden = prompt("Ingrese nro de orden de la cancion");
+            byte nroOrden = prompt("Ingrese nro de orden de la cancion");
             Console.WriteLine("Seleccione un album: ");
             var album = MenuListaAlbumes.seleccionarElemento();
 
-            Cancion = new Cancion(nombre, nroOrden, album)
+            Cancion = new Cancion(nombre, nroOrden, album);
 
             try
             {

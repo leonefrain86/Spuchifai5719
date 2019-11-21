@@ -11,7 +11,7 @@ namespace BandaConsola.Menu
         public override void imprimirElemento(Album unAlbum) 
             => Console.WriteLine($"{unAlbum.Id} - {unAlbum.Nombre}");
 
-        public override List<Album> obtenerLista()
+        public override List<Album> obtenerLista() 
             => AdoBanda.ADO.obtenerAlbumes();        
     }
 }
