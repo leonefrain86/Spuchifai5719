@@ -11,10 +11,10 @@ namespace AdministradorConsola
             var menuAltaBanda = new MenuAltaBanda() { Nombre = "Alta Banda" };
             var menuListaBanda = new MenuListaBanda() { Nombre = "Listado de Bandas" };
 
-            var menuAltaAlbum = new MenuAltaAlbum() { Nombre = "Alta Album" };
+            var menuAltaAlbum = new MenuAltaAlbum(menuListaBanda) { Nombre = "Alta Album" };
             var menuListaAlbum = new MenuListaAlbum() { Nombre = "Listado de Álbumes" };
 
-            var menuAltaCancion = new MenuAltaCancion() { Nombre = "Alta Canciones" };
+            var menuAltaCancion = new MenuAltaCancion(menuListaAlbum, menuListaBanda) { Nombre = "Alta Canciones" };
             var menuListaCancion = new MenuListaCancion() { Nombre = "Listado de Canciones" };
 
             var menuListaCliente = new MenuListaCliente() { Nombre = "Listado de Clientes" };

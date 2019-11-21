@@ -10,15 +10,20 @@ namespace AdministradorConsola
 {
     public class MenuAltaAlbum : MenuComponente
     {
-        private MenuListaBanda MenuListaBanda { get; set; }
+        private MenuListaBanda menuListaBanda { get; set; }
         public Album album { get; set; }
+        public MenuAltaAlbum(MenuListaBanda MenuListaBanda)
+        {
+            menuListaBanda = MenuListaBanda;
+            Nombre = "Alta Producto";
+        }
         public override void mostrar()
         {
             base.mostrar();
             Console.WriteLine();
             var nombre = prompt("Ingrese nombre del álbum: ");
-            Console.WriteLine("Seleccione una categoria x)");
-            var banda = MenuListaBanda.seleccionarElemento();
+            Console.WriteLine("Seleccione la banda x)");
+            var banda = menuListaBanda.seleccionarElemento();
             album = new Album(nombre, banda);
             try
             {

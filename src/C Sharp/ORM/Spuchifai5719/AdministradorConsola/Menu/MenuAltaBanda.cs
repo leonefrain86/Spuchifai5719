@@ -10,6 +10,8 @@ namespace AdministradorConsola.Menu
     public class MenuAltaBanda : MenuComponente
     {
         public Banda banda { get; set; }
+
+
         public override void mostrar()
         {
             base.mostrar();

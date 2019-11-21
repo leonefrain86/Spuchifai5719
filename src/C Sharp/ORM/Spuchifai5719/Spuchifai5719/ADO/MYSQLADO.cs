@@ -10,7 +10,7 @@ namespace Spuchifai5719.ADO
         DbSet<Album> Albumes { get; set; }
         DbSet<Banda> Bandas { get; set; }
         DbSet<Cancion> Canciones { get; set; }
-        DbSet<Reproduccion> Reproduciones { get; set; }
+        DbSet<Reproduccion> Reproducciones { get; set; }
         DbSet<Cliente> Clientes { get; set; }
 
         public MYSQLADO() : base() { }
@@ -45,6 +45,12 @@ namespace Spuchifai5719.ADO
             SaveChanges();
         }
 
+        public void altaReproduccion(Reproduccion reproduccion)
+        {
+            Reproducciones.Add(reproduccion);
+            SaveChanges();
+        }
+
         public Cliente clientePorUserYPass(string mailUser, string pass)
         {
             return Clientes.FirstOrDefault(c => (c.Mail == mailUser && c.Password == pass));
@@ -68,5 +74,7 @@ namespace Spuchifai5719.ADO
         public List<Cancion> obtenerCanciones() => Canciones.ToList();
 
         public List<Cliente> obtenerClientes() => Clientes.ToList();
+
+        public List<Reproduccion> obtenerReproducciones() => Reproducciones.ToList();
     }
 }

@@ -4,14 +4,15 @@ using System.Text;
 using Spuchifai5719;
 using MenuesConsola;
 
-namespace AdministradorConsola
+
+namespace ClienteConsola
 {
     public class MenuListaAlbum : MenuListador<Album>
     {
         public override void imprimirElemento(Album elemento)
-          => Console.WriteLine($"{elemento.Id} - {elemento.Nombre} - {elemento.Album.Nombre}");
+          => Console.WriteLine($"{elemento.Id} - {elemento.Nombre}");
 
         public override List<Album> obtenerLista()
-            => ADOAdministrador.ADO.obtenerAlbumes();
+            => ADOCliente.ADO.obtenerAlbumes();
     }
 }
