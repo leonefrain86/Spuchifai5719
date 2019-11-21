@@ -19,7 +19,6 @@ namespace PruebaSpuchifai
         public void SeCreaDB()
         {
             AdoMySQL.Database.EnsureCreated();
-
         }
        
     }

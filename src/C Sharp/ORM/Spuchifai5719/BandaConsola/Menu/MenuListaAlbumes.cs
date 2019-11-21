@@ -12,6 +12,6 @@ namespace BandaConsola.Menu
             => Console.WriteLine($"{unAlbum.Id} - {unAlbum.Nombre}");
 
         public override List<Album> obtenerLista() 
-            => AdoBanda.ADO.obtenerAlbumes();        
+            => ADOBanda.ADO.obtenerAlbumes();        
     }
 }

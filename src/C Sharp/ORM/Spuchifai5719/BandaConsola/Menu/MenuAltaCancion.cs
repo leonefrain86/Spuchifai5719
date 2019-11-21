@@ -24,7 +24,8 @@ namespace BandaConsola.Menu
             base.mostrar();
 
             var nombre = prompt("Ingrese nombre de la cancion");
-            byte nroOrden = prompt("Ingrese nro de orden de la cancion");
+            Console.WriteLine("Ingrese nro de orden de la cancion: ");
+            byte nroOrden = Convert.ToByte(Console.ReadLine());
             Console.WriteLine("Seleccione un album: ");
             var album = MenuListaAlbumes.seleccionarElemento();
 
@@ -32,7 +33,7 @@ namespace BandaConsola.Menu
 
             try
             {
-                AdoBanda.ADO.altaCancion(Cancion);
+                ADOBanda.ADO.altaCancion(Cancion);
                 Console.WriteLine("Cancion dado de alta con exito");
             }
             catch (Exception e)

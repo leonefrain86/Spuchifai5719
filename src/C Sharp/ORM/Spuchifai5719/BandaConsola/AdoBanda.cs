@@ -1,6 +1,6 @@
 ﻿using Spuchifai5719.ADO;
 
-namespace AdministradorConsola
+namespace BandaConsola
 {
     public static class ADOBanda
     {

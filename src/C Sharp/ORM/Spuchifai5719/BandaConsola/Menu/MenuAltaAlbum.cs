@@ -31,7 +31,7 @@ namespace BandaConsola.Menu
 
             try
             {
-                AdoBanda.ADO.altaAlbum(Album);
+                ADOBanda.ADO.altaAlbum(Album);
                 Console.WriteLine("Album dado de alta con exito");
             }
             catch (Exception e)
