@@ -9,7 +9,7 @@ namespace AdministradorConsola.Menu
     public class MenuListaCliente : MenuListador<Cliente>
     {
         public override void imprimirElemento(Cliente elemento)
-          => Console.WriteLine($"{elemento.Id} - {elemento.Nombre}");
+          => Console.WriteLine($"{elemento.Id} - {elemento.Nombre} {elemento.Apellido} - {elemento.Mail}");
 
         public override List<Cliente> obtenerLista()
             => ADOAdministrador.ADO.obtenerClientes();

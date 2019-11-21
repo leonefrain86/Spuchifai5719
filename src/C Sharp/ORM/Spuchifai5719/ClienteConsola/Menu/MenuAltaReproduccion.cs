@@ -11,7 +11,6 @@ namespace ClienteConsola.Menu
     public class MenuAltaReproduccion : MenuComponente
     {
         private MenuListaCancion menuListaCancion { get; set; }
-        public Reproduccion reproduccion { get; set; }
         public Cliente cliente { get; set; }
         public MenuAltaReproduccion(MenuListaCancion MenuListaCancion)
         {

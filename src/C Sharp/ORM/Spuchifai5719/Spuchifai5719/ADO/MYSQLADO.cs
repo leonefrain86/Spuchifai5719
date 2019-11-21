@@ -90,5 +90,23 @@ namespace Spuchifai5719.ADO
                 Include(c => c.cliente).
                 Include(a => a.cancion).
                 ToList();
+        public void actualizarAlbum(Album albumActualizado)
+        {
+            this.Attach<Album>(albumActualizado);
+            SaveChanges();
+        }
+
+        public void actualizarBanda(Banda banda)
+        {
+            this.Attach<Banda>(banda);
+            SaveChanges();
+        }
+
+        public void actualizarCancion(Cancion cancion)
+        {
+            this.Attach<Cancion>(cancion);
+            SaveChanges();
+        }
     }
+
 }

@@ -8,17 +8,17 @@ namespace AdministradorConsola
     {
         static void Main(string[] args)
         {
-            var menuAltaBanda = new MenuAltaBanda() { Nombre = "Alta Banda" };
+            var menuAltaBanda = new MenuUpdateBanda() { Nombre = "Actualizar Banda" };
             var menuListaBanda = new MenuListaBanda() { Nombre = "Listado de Bandas" };
 
-            var menuAltaAlbum = new MenuAltaAlbum(menuListaBanda) { Nombre = "Alta Album" };
+            var menuAltaAlbum = new MenuUpdateAlbum() { Nombre = "Actualizar Album" };
             var menuListaAlbum = new MenuListaAlbum() { Nombre = "Listado de Álbumes" };
 
-            var menuAltaCancion = new MenuAltaCancion(menuListaAlbum, menuListaBanda) { Nombre = "Alta Canciones" };
+            var menuAltaCancion = new MenuUpdateCancion() { Nombre = "Actualizar Canciones" };
             var menuListaCancion = new MenuListaCancion() { Nombre = "Listado de Canciones" };
 
             var menuListaCliente = new MenuListaCliente() { Nombre = "Listado de Clientes" };
-            var menuAltaCliente = new MenuAltaCliente() { Nombre = "Alta Cliente" };
+            var menuAltaCliente = new MenuUpdateCliente() { Nombre = "Alta Cliente" };
 
             var menuBanda = new MenuCompuesto() { Nombre = "Bandas" };
             menuBanda.agregarMenu(menuAltaBanda);
