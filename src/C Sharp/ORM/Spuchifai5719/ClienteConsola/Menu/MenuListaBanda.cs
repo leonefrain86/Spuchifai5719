@@ -10,7 +10,7 @@ namespace ClienteConsola.Menu
     public class MenuListaBanda : MenuListador<Banda>
     {
         public override void imprimirElemento(Banda elemento)
-            => Console.WriteLine($"{elemento.Id} - {elemento.Nombre}");
+            => Console.WriteLine($"{elemento.Id} - Nombre: {elemento.Nombre}");
 
         public override List<Banda> obtenerLista()
             => ADOCliente.ADO.obtenerBandas();

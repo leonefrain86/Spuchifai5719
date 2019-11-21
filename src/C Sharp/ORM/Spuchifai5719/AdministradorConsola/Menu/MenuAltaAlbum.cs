@@ -15,24 +15,24 @@ namespace AdministradorConsola
         public MenuAltaAlbum(MenuListaBanda MenuListaBanda)
         {
             menuListaBanda = MenuListaBanda;
-            Nombre = "Alta Producto";
+            Nombre = "Alta Álbum";
         }
         public override void mostrar()
         {
             base.mostrar();
             Console.WriteLine();
-            var nombre = prompt("Ingrese nombre del álbum: ");
+            var nombre = prompt("Ingrese nombre del álbum");
             Console.WriteLine("Seleccione la banda x)");
             var banda = menuListaBanda.seleccionarElemento();
             album = new Album(nombre, banda);
             try
             {
                 ADOAdministrador.ADO.altaAlbum(album);
-                Console.WriteLine("Álbum agregado con exito");
+                Console.WriteLine("Álbum agregado con éxito");
             }
             catch (Exception e)
             {
-                Console.WriteLine($"No se pudo cargar la categoria por: {e.Message}");
+                Console.WriteLine($"No se pudo cargar el álbum por: {e.Message}");
             }
             Console.ReadKey();
         }

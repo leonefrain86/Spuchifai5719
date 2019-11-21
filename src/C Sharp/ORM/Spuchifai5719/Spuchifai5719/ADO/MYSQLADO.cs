@@ -71,15 +71,24 @@ namespace Spuchifai5719.ADO
 
         public List<Album> obtenerAlbumes()
             =>  Albumes.
-                Include(a => a.Canciones).ThenInclude(c => c.Reproducciones).
+                Include(c=>c.Banda).               
+                Include(a => a.Canciones).
+                    ThenInclude(c => c.Reproducciones).
                 ToList();
 
         public List<Cancion> obtenerCanciones() 
-            => Canciones.
-               Include(x => x.Reproducciones).ToList();
+            =>  Canciones.
+                Include(c=>c.Album).
+                    ThenInclude(a=>a.Banda).
+                Include(x => x.Reproducciones).
+                ToList();             
 
         public List<Cliente> obtenerClientes() => Clientes.ToList();
 
-        public List<Reproduccion> obtenerReproducciones() => Reproducciones.ToList();
+        public List<Reproduccion> obtenerReproducciones() 
+            =>  Reproducciones.
+                Include(c => c.cliente).
+                Include(a => a.cancion).
+                ToList();
     }
 }

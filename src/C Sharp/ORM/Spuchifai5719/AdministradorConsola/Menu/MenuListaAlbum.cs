@@ -9,7 +9,7 @@ namespace AdministradorConsola
     public class MenuListaAlbum : MenuListador<Album>
     {
         public override void imprimirElemento(Album elemento)
-          => Console.WriteLine($"{elemento.Id} - {elemento.Nombre} - {elemento.Album.Nombre}");
+          => Console.WriteLine($"{elemento.Nombre} - Banda: {elemento.Banda.Nombre}");
 
         public override List<Album> obtenerLista()
             => ADOAdministrador.ADO.obtenerAlbumes();
