@@ -24,7 +24,7 @@ namespace BandaConsola.Menu
             base.mostrar();
 
             var nombre = prompt("Ingrese nombre de la cancion");
-            Console.WriteLine("Ingrese nro de orden de la cancion: ");
+            Console.Write("Ingrese nro de orden de la cancion: ");
             byte nroOrden = Convert.ToByte(Console.ReadLine());
             Console.WriteLine("Seleccione un album: ");
             var album = MenuListaAlbumes.seleccionarElemento();

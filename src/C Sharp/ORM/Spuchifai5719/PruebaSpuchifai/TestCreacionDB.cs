@@ -20,6 +20,5 @@ namespace PruebaSpuchifai
         {
             AdoMySQL.Database.EnsureCreated();
         }
-       
     }
 }

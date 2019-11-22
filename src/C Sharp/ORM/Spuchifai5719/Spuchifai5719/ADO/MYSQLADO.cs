@@ -116,12 +116,25 @@ namespace Spuchifai5719.ADO
 
         public List<Album> obtenerAlbumesParaBanda(Banda banda)
         {
-            return Albumes.Where(x => x.Banda.Id == banda.Id).Include(x => x.Canciones).ThenInclude(c => c.Reproducciones).ToList();
+            return Albumes.Where(x => x.Banda.Id == banda.Id).
+                    Include(x => x.Canciones).
+                        ThenInclude(c => c.Reproducciones).
+                    ToList();
         }
 
         public List<Cancion> obtenerCancionesParaBanda(Banda banda)
         {
-            return Canciones.Where(x => x.Album.Banda.Id == banda.Id).Include(x => x.Reproducciones).ToList();
+            return Canciones.Where(x => x.Album.Banda.Id == banda.Id).
+                    Include(x => x.Reproducciones).
+                    ToList();
+        }
+
+        public List<Reproduccion> obtenerReproduccionesParaCliente(Cliente cliente)
+        {
+            return Reproducciones.Where(x => x.cliente.Id == cliente.Id).
+                    Include(c => c.cancion).
+                    Include(x => x.cliente).
+                    ToList();
         }
     }
 

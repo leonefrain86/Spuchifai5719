@@ -6,29 +6,40 @@ namespace Spuchifai5719.ADO
     {
         void altaBanda(Banda banda);
         Banda bandaPorNameYPass(string nameBanda, string pass);
+        List<Banda> obtenerBandas();
+        void actualizarBanda(Banda banda);
 
-        void altaAlbum(Album album);   
 
-        void altaCancion(Cancion cancion);
-
-        void altaCliente(Cliente cliente);
-
-        void altaReproduccion(Reproduccion reproduccion);
-
-        Cliente clientePorUserYPass(string mailUser, string pass);
-
-        List<Cancion> traerCanciones();
-
-        void actualizarCliente(Cliente cliente);
-        List<Cancion> obtenerCanciones();
-        List<Cancion> obtenerCancionesParaBanda(Banda banda);
-        List<Reproduccion> obtenerReproducciones();
-        List<Cliente> obtenerClientes();
+        void altaAlbum(Album album);
         List<Album> obtenerAlbumes();
         List<Album> obtenerAlbumesParaBanda(Banda banda);
-        List<Banda> obtenerBandas();
         void actualizarAlbum(Album album);
-        void actualizarBanda(Banda banda);
+
+
+        void altaCancion(Cancion cancion);
         void actualizarCancion(Cancion cancion);
+        List<Cancion> obtenerCanciones();
+        List<Cancion> traerCanciones();
+        List<Cancion> obtenerCancionesParaBanda(Banda banda);
+
+
+        void altaCliente(Cliente cliente);
+        void altaReproduccion(Reproduccion reproduccion);
+        Cliente clientePorUserYPass(string mailUser, string pass);
+
+        
+
+        void actualizarCliente(Cliente cliente);
+        List<Cliente> obtenerClientes();
+
+
+        List<Reproduccion> obtenerReproducciones();
+        List<Reproduccion> obtenerReproduccionesParaCliente(Cliente cliente);
+
+
+
+
+
+
     }
 }

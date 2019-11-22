@@ -24,8 +24,6 @@ namespace BandaConsola.Menu
             base.mostrar();
 
             var nombre = prompt("Ingrese nombre del album");
-            //Console.WriteLine("Seleccione una banda: ");
-            //var banda = MenuListaBandas.seleccionarElemento();
 
             Album = new Album(nombre, Banda);
 

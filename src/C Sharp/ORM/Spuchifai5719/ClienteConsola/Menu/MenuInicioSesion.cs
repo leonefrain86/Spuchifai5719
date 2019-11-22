@@ -49,7 +49,7 @@ namespace ClienteConsola.Menu
 
             var menuListaCancion = new MenuListaCancion() { Nombre = "Listado de Canciones" };
 
-            var menuListaReproduccion = new MenuListaReproduccion() { Nombre = "Listado de Reproducciones" };
+            var menuListaReproduccion = new MenuListaReproduccion() { Nombre = "Listado de Reproducciones" , cliente = Cliente};
             var menuAltaReproduccion = new MenuAltaReproduccion(menuListaCancion) { Nombre = "Alta Reproduccion", cliente = Cliente };
 
             var menuReproduccion = new MenuCompuesto() { Nombre = "Escuchar Canción" };
