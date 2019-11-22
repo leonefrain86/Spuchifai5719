@@ -24,9 +24,12 @@ namespace Spuchifai5719
 
         public List<Cancion> Canciones { get; set; }
 
-        public Album() { }
+        public Album()
+        {
+            Canciones = new List<Cancion>();
+        }
 
-        public Album(string nombre, Banda unaBanda)
+        public Album(string nombre, Banda unaBanda) : this()
         {
             Nombre = nombre;
             FechaLanzamiento = DateTime.Now;

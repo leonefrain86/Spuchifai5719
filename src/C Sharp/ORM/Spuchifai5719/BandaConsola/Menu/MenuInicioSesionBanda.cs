@@ -45,9 +45,9 @@ namespace BandaConsola.Menu
         private void instanciarMenuesPara(Banda banda)
         {
             var MenuAltaAlbum = new MenuAltaAlbum(banda);
-            var MenuListaAlbumes = new MenuListaAlbumes() { Nombre = "Lista de Albumes" };
+            var MenuListaAlbumes = new MenuListaAlbumes() { Nombre = "Lista de Albumes", Banda = banda };
             var MenuAltaCancion = new MenuAltaCancion(MenuListaAlbumes);
-            var MenuListaCanciones = new MenuListaCanciones() { Nombre = "Lista de Canciones" };
+            var MenuListaCanciones = new MenuListaCanciones() { Nombre = "Lista de Canciones", Banda = banda };
 
             var menuAlbum = new MenuCompuesto() { Nombre = "Albumes" };
             menuAlbum.agregarMenu(MenuAltaAlbum);

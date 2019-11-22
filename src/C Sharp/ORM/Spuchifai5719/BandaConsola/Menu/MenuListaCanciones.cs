@@ -8,10 +8,13 @@ namespace BandaConsola.Menu
 {
     public class MenuListaCanciones : MenuListador<Cancion>
     {
-        public override void imprimirElemento(Cancion unaCancion) 
-            => Console.WriteLine($"{unaCancion.Id} - Nombre: {unaCancion.Nombre} - Cant. de Reproducciones: {unaCancion.CantidadReproducciones()} ");
+        public Banda Banda { get; set; }
 
+        public override void imprimirElemento(Cancion unaCancion)
+        {
+             Console.WriteLine($"{unaCancion.Id} - Nombre: {unaCancion.Nombre} - Cant. de Reproducciones: {unaCancion.CantidadReproducciones()} ");
+        }
         public override List<Cancion> obtenerLista()
-            => AdoBanda.ADO.obtenerCanciones();
+            => AdoBanda.ADO.obtenerCancionesParaBanda(Banda);
     }
 }

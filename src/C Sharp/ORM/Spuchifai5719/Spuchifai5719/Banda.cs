@@ -25,9 +25,12 @@ namespace Spuchifai5719
         [Column("contrasenia"), StringLength(64), Required]
         public string Password { get; set; }
 
-        public Banda() { }
+        public Banda()
+        {
+            Albumes = new List<Album>();
+        }
 
-        public Banda(string nombre, string contrasenia)
+        public Banda(string nombre, string contrasenia):this()
         {
             this.Nombre = nombre;
             this.AnioFundacion = Convert.ToInt16(DateTime.Now.Year);

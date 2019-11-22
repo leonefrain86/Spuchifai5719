@@ -95,6 +95,7 @@ namespace Spuchifai5719.ADO
                 Include(c => c.cliente).
                 Include(a => a.cancion).
                 ToList();
+
         public void actualizarAlbum(Album albumActualizado)
         {
             this.Attach<Album>(albumActualizado);
@@ -111,6 +112,16 @@ namespace Spuchifai5719.ADO
         {
             this.Attach<Cancion>(cancion);
             SaveChanges();
+        }
+
+        public List<Album> obtenerAlbumesParaBanda(Banda banda)
+        {
+            return Albumes.Where(x => x.Banda.Id == banda.Id).Include(x => x.Canciones).ThenInclude(c => c.Reproducciones).ToList();
+        }
+
+        public List<Cancion> obtenerCancionesParaBanda(Banda banda)
+        {
+            return Canciones.Where(x => x.Album.Banda.Id == banda.Id).Include(x => x.Reproducciones).ToList();
         }
     }
 
