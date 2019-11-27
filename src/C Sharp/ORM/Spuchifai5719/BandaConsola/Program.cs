@@ -8,9 +8,14 @@ namespace BandaConsola
     {
         static void Main(string[] args)
         {
-            var menuInicioSesionBanda = new MenuInicioSesionBanda() { Nombre = "Login Banda" };
+            var menuInicioSesionBanda = new MenuInicioSesionBanda() { Nombre = "Login" };
+            var menuRegistroBanda = new MenuAltaBanda () { Nombre = "Sing in" };
 
-            menuInicioSesionBanda.mostrar(); 
+            var menuPrincipal = new MenuCompuesto() { Nombre = "Banda" };
+            menuPrincipal.agregarMenu(menuInicioSesionBanda);
+            menuPrincipal.agregarMenu(menuRegistroBanda);
+
+            menuPrincipal.mostrar();
         }
     }
 }

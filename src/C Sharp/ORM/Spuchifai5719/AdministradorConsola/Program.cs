@@ -19,7 +19,6 @@ namespace AdministradorConsola
             var menuListaCancion = new MenuListaCancion() { Nombre = "Listado de Canciones" };
 
             var menuListaCliente = new MenuListaCliente() { Nombre = "Listado de Clientes" };
-            var menuAltaCliente = new MenuUpdateCliente() { Nombre = "Alta Cliente" };
 
             var menuBanda = new MenuCompuesto() { Nombre = "Bandas" };
             menuBanda.agregarMenu(menuModificarBanda);
@@ -36,7 +35,6 @@ namespace AdministradorConsola
 
             var menuCliente = new MenuCompuesto() { Nombre = "Clientes" };
             menuCliente.agregarMenu(menuListaCliente);
-            menuCliente.agregarMenu(menuAltaCliente);
 
 
             var menuPrincipal = new MenuCompuesto() { Nombre = "Menu Administrador" };

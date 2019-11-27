@@ -6,7 +6,7 @@ using Spuchifai5719;
 using NETCore.Encrypt;
 using static System.ReadLine;
 
-namespace AdministradorConsola.Menu
+namespace BandaConsola.Menu
 {
     public class MenuAltaBanda : MenuComponente
     {
@@ -23,8 +23,8 @@ namespace AdministradorConsola.Menu
 
             try
             {
-                ADOAdministrador.ADO.altaBanda(Banda);
-                Console.WriteLine("Banda dado de alta con exito");
+                AdoBanda.ADO.altaBanda(Banda);
+                Console.WriteLine("Banda registrada con exito");
             }
             catch (Exception e)
             {

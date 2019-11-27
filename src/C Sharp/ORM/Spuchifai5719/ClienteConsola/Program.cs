@@ -9,8 +9,13 @@ namespace ClienteConsola
         static void Main(string[] args)
         {
             var menuInicioSesion = new MenuInicioSesion() { Nombre = "Login" };
+            var menuRegistro = new MenuAltaCliente() { Nombre = "Sing in" };
 
-                menuInicioSesion.mostrar();
+            var menuPrincipal = new MenuCompuesto() { Nombre = "Clente" };
+            menuPrincipal.agregarMenu(menuInicioSesion);
+            menuPrincipal.agregarMenu(menuRegistro);
+        
+            menuPrincipal.mostrar();
             
         }
     }
