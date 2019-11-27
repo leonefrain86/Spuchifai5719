@@ -25,7 +25,7 @@ namespace ClienteConsola.Menu
                 Cliente = ADOCliente.ADO.clientePorUserYPass(mail, pass);
                 if (Cliente is null)
                 {
-                    Console.WriteLine("DNI o contraseña incorrecta");
+                    Console.WriteLine("mail o contraseña incorrecta");
                     Console.ReadKey();
                 }
                 else

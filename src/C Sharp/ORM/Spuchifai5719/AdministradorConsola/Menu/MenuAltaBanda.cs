@@ -16,7 +16,7 @@ namespace AdministradorConsola.Menu
         {
             base.mostrar();
 
-            var nombre = prompt("Ingrese nombre del banda: ");
+            var nombre = prompt("Ingrese nombre del banda");
             var pass = ReadPassword("Ingrese contraseña de la Banda: ");
             pass = EncryptProvider.Sha256(pass);
             Banda = new Banda(nombre, pass);
